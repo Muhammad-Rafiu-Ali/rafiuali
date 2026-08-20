@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad Rafiu Ali | AI & Data Science Developer</title>
+  <link rel="icon" type="image/png" href="Rafiu Passport photo.png">
+  <meta name="description" content="Portfolio of Muhammad Rafiu Ali, an AI and Data Science Developer, Python programmer, and Computer Science educator based in Karachi, Pakistan.">
+  <meta name="keywords" content="Muhammad Rafiu Ali, AI Developer, Data Science, Machine Learning, Python, Computer Vision, NLP, Karachi, Portfolio">
+  <meta name="author" content="Muhammad Rafiu Ali">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Muhammad Rafiu Ali | AI & Data Science Developer">
+  <meta property="og:description" content="AI, machine learning, computer vision, data science, and educational technology projects.">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap and icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1b2a;
+      --panel-2: #122238;
+      --text: #eaf3ff;
+      --muted: #a9b8cc;
+      --accent: #31d0aa;
+      --accent-2: #3f8cff;
+      --line: rgba(255, 255, 255, 0.09);
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background: #f5f8fc;
+      color: #182230;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, .brand {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    a { text-decoration: none; }
+    img { max-width: 100%; }
+
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 285px;
+      padding: 32px 24px;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(49, 208, 170, 0.15), transparent 30%),
+        linear-gradient(160deg, #07111f 0%, #0a1727 100%);
+      color: var(--text);
+      z-index: 1000;
+      overflow-y: auto;
+      border-right: 1px solid var(--line);
+    }
+
+    .brand {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: #06121e;
+      background: linear-gradient(135deg, var(--accent), #85f7da);
+      box-shadow: 0 12px 32px rgba(49, 208, 170, 0.22);
+      font-weight: 800;
+    }
+
+    .sidebar .nav-link {
+      color: #b8c6d8;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-bottom: 6px;
+      transition: 0.25s ease;
+      font-weight: 600;
+    }
+
+    .sidebar .nav-link i {
+      width: 25px;
+      display: inline-block;
+      color: var(--accent);
+    }
+
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.07);
+      transform: translateX(4px);
+    }
+
+    .sidebar-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .sidebar-social a,
+    .social-circle {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #dce9fa;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .sidebar-social a:hover,
+    .social-circle:hover {
+      color: #07111f;
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .main-wrap { margin-left: 285px; }
+
+    .mobile-nav {
+      display: none;
+      background: #07111f;
+    }
+
+    .hero {
+      min-height: 100vh;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(63, 140, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 58% 75%, rgba(49, 208, 170, 0.16), transparent 31%),
+        linear-gradient(140deg, #07111f 0%, #0a192b 58%, #0d2038 100%);
+      padding: 90px 0;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    .hero::before { width: 430px; height: 430px; right: -170px; top: -100px; }
+    .hero::after { width: 310px; height: 310px; left: 35%; bottom: -210px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(49, 208, 170, 0.1);
+      border: 1px solid rgba(49, 208, 170, 0.28);
+      color: #8df5dc;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.4rem);
+      line-height: 0.98;
+      font-weight: 700;
+      max-width: 900px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .typed-line {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      color: #c8d8ec;
+      min-height: 42px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    #typed-text { color: #fff; }
+    .cursor { color: var(--accent); animation: blink 0.8s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    .btn-accent,
+    .btn-outline-light-custom {
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .btn-accent {
+      color: #07111f;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      box-shadow: 0 14px 35px rgba(49, 208, 170, 0.19);
+    }
+
+    .btn-accent:hover {
+      color: #07111f;
+      background: #7ef0d5;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light-custom {
+      color: #eaf3ff;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .btn-outline-light-custom:hover {
+      color: #fff;
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .avatar-shell {
+      width: min(430px, 88vw);
+      aspect-ratio: 1;
+      margin: auto;
+      border-radius: 42px;
+      padding: 16px;
+      position: relative;
+      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+
+    .avatar-shell::after {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      color: #dffcf4;
+      background: rgba(7, 17, 31, 0.78);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255,255,255,.16), transparent 28%),
+        linear-gradient(145deg, #163456, #0b1a2b);
+    }
+
+    .avatar-placeholder svg { width: 80%; height: 80%; }
+
+    .section {
+      padding: 92px 0;
+      position: relative;
+    }
+
+    .section-soft { background: #edf3f9; }
+    .section-dark { background: #081421; color: var(--text); }
+
+    .section-title {
+      margin-bottom: 46px;
+    }
+
+    .section-title .kicker {
+      color: #1c8f74;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+    }
+
+    .section-dark .section-title .kicker { color: #72e4c8; }
+
+    .section-title h2 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      margin: 8px 0 12px;
+    }
+
+    .section-title p {
+      color: #627083;
+      max-width: none;
+      margin: 0;
+    }
+
+    .section-dark .section-title p { color: #9eafc4; }
+
+    .glass-card,
+    .content-card,
+    .project-card,
+    .achievement-card,
+    .certificate-card,
+    .contact-card {
+      border-radius: var(--radius);
+      border: 1px solid rgba(20, 42, 66, 0.09);
+      background: #fff;
+      box-shadow: 0 14px 45px rgba(16, 40, 69, 0.08);
+    }
+
+    .profile-card {
+      padding: 30px;
+      height: 100%;
+      background: linear-gradient(155deg, #0b1b2e, #102946);
+      color: var(--text);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      right: -80px;
+      top: -60px;
+      background: rgba(49,208,170,.12);
+    }
+
+    .profile-mini {
+      width: 110px;
+      height: 110px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      color: #07111f;
+      background: linear-gradient(135deg, var(--accent), #8ef7dd);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #c4d2e3;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-row i { color: var(--accent); margin-top: 4px; }
+    .contact-row a { color: #dce9f8; word-break: break-word; }
+
+    .about-panel { padding: 38px; }
+    .about-panel .lead-copy { font-size: 1.12rem; color: #3e4d61; }
+
+    .info-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 6px 8px 6px 0;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #eaf6f3;
+      color: #156a58;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .stat-card {
+      padding: 26px;
+      border-radius: 20px;
+      color: var(--text);
+      background: linear-gradient(145deg, #0e2137, #0a1828);
+      border: 1px solid rgba(255,255,255,.07);
+      height: 100%;
+    }
+
+    .stat-value {
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--accent);
+      font-size: 2.3rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label { color: #b4c3d5; font-weight: 600; }
+
+    .skills-group {
+      padding: 30px;
+      height: 100%;
+    }
+
+    .skills-group h3 { font-size: 1.35rem; margin-bottom: 20px; }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 12px;
+      background: #eff5fa;
+      border: 1px solid #dfe9f2;
+      color: #25364b;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .skill-tag i { color: #13806a; }
+
+    .resume-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 24px;
+    }
+
+    .resume-card { padding: 34px; }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 30px 28px;
+      border-left: 2px solid #dbe6f0;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #b7eadd;
+    }
+
+    .timeline-item h4 { font-size: 1.15rem; margin-bottom: 4px; }
+    .timeline-meta { color: #18705e; font-weight: 800; font-size: 0.9rem; }
+    .timeline-company { color: #59697b; font-weight: 700; margin-bottom: 9px; }
+    .timeline-item ul { padding-left: 18px; color: #536276; margin-bottom: 0; }
+
+    .project-card {
+      overflow: hidden;
+      height: 100%;
+      transition: 0.28s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(16, 40, 69, 0.14);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #f5f7fb;
+      position: relative;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .35s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-image::after {
+      content: "View Project";
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(7,17,31,.78);
+      color: white;
+      font-size: .78rem;
+      opacity: 0;
+      transition: .3s ease;
+    }
+
+    .project-card:hover .project-image::after {
+      opacity: 1;
+    }
+    .project-visual::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      right: -50px;
+      bottom: -70px;
+      background: rgba(255,255,255,.13);
+    }
+
+    .visual-ai { background: linear-gradient(135deg, #0e4f70, #0a213d); }
+    .visual-bi { background: linear-gradient(135deg, #2e5fba, #18295a); }
+    .visual-plant { background: linear-gradient(135deg, #16846b, #0e3b37); }
+
+    .project-body { padding: 26px; }
+    .project-badge {
+      display: inline-block;
+      color: #176b59;
+      background: #e8f7f3;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .project-body h3 { font-size: 1.3rem; }
+    .project-body p { color: #617084; }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 16px 0 20px;
+    }
+
+    .tech-list span {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 6px 9px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      color: #41536a;
+    }
+
+    .achievement-card,
+    .certificate-card {
+      padding: 26px;
+      height: 100%;
+      transition: 0.25s ease;
+    }
+
+    .achievement-card:hover,
+    .certificate-card:hover { transform: translateY(-5px); }
+
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: #0d705d;
+      background: #e6f7f2;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .achievement-card p,
+    .certificate-card p { color: #68778a; margin-bottom: 0; }
+
+    .service-card-dark {
+      padding: 28px;
+      border-radius: 20px;
+      height: 100%;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .service-card-dark .icon-box {
+      background: rgba(49,208,170,.12);
+      color: #7ff2d6;
+    }
+
+    .service-card-dark p { color: #a9b8cc; margin-bottom: 0; }
+
+    .contact-card { padding: 34px; height: 100%; }
+
+    .contact-action {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8eef4;
+    }
+
+    .contact-action:last-child { border-bottom: 0; }
+    .contact-action .icon-box { margin: 0; flex: 0 0 auto; }
+    .contact-action a { color: #1d2a3a; font-weight: 800; }
+    .contact-action small { display: block; color: #738194; font-weight: 500; }
+
+    .form-control {
+      border-radius: 12px;
+      border: 1px solid #dbe5ee;
+      padding: 13px 14px;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0.22rem rgba(49, 208, 170, 0.15);
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #06101d;
+      color: #9db0c6;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    footer a { color: #75e4ca; }
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 46px;
+      height: 46px;
+      display: none;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #07111f;
+      box-shadow: 0 12px 28px rgba(0,0,0,.22);
+      z-index: 1001;
+    }
+
+    .back-to-top.show { display: grid; }
+
+    @media (max-width: 1199.98px) {
+      .sidebar { display: none; }
+      .main-wrap { margin-left: 0; }
+      .mobile-nav { display: block; position: sticky; top: 0; z-index: 1100; }
+      .hero { min-height: auto; padding-top: 110px; }
+      .resume-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 767.98px) {
+      .section { padding: 72px 0; }
+      .hero h1 { font-size: 3.3rem; }
+      .about-panel, .resume-card, .contact-card { padding: 25px; }
+      .avatar-shell { margin-top: 44px; }
+    }
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-photo {
+    width: 200px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 15px;   /* square with rounded corners */
+    border: 3px solid var(--accent);
+    display: block;
+}
+
+.brand-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+
+.brand-name span {
+    color: var(--accent);
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;   /* square with rounded corners */
+    display: block;
+}
+  
+    .certificate-image-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 14px 45px rgba(16,40,69,.08);
+      transition: .3s ease;
+      height: 100%;
+    }
+
+    .certificate-image-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(16,40,69,.14);
+    }
+
+    .certificate-preview {
+      height: 300px;
+      overflow: hidden;
+      background: #f4f7fb;
+    }
+
+    .certificate-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 10px;
+    }
+
+    .certificate-info {
+      padding: 22px;
+    }
+
+    .certificate-info h4 {
+      margin-bottom: 10px;
+    }
+
+    .certificate-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #167761;
+    }
+
+  
+.certificate-image-card {
+ overflow:hidden;
+ border-radius:24px;
+ background:#fff;
+ box-shadow:0 14px 45px rgba(16,40,69,.08);
+ height:100%;
+ transition:.3s ease;
+}
+.certificate-image-card:hover {transform:translateY(-8px);}
+.certificate-preview {
+ height:300px;
+ background:#f4f7fb;
+ overflow:hidden;
+}
+.certificate-preview img {
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ padding:12px;
+}
+.certificate-info {padding:22px;}
+.certificate-link {
+ color:#167761;
+ font-weight:700;
+}
+
+</style>
+
+<!-- Add profile image styling in main.css:
+.profile-photo {
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ border-radius:30px;
+ display:block;
+}
+.avatar-placeholder {
+ overflow:hidden;
+}
+-->
+
+</head>
+<body>
+
+  <!-- This standalone page was customized from the user's SnapFolio-based index structure. -->
+  <!-- Replace the avatar placeholder with your own image when ready. -->
+  <!-- Coursera /my-learning links are private. Add individual public credential URLs in the Certifications section. -->
+
+  <aside class="sidebar">
+    <a href="#home" class="brand">
+      <span class="brand-mark">
+        <img src="Rafiu Passport photo.png" 
+             alt="Muhammad Rafiu Ali" 
+             class="brand-photo">
+      </span>
+      Rafiu<span style="color: var(--accent);">Ali</span>
+    </a>
+
+    <nav class="nav flex-column" id="desktopNav">
+      <a class="nav-link active" href="#home"><i class="bi bi-house-door"></i> Home</a>
+      <a class="nav-link" href="#about"><i class="bi bi-person"></i> About</a>
+      <a class="nav-link" href="#skills"><i class="bi bi-cpu"></i> Skills</a>
+      <a class="nav-link" href="#resume"><i class="bi bi-file-earmark-person"></i> Resume</a>
+      <a class="nav-link" href="#projects"><i class="bi bi-grid"></i> Projects</a>
+      <a class="nav-link" href="#achievements"><i class="bi bi-trophy"></i> Achievements</a>
+      <a class="nav-link" href="#certifications"><i class="bi bi-patch-check"></i> Certifications</a>
+      <a class="nav-link" href="#contact"><i class="bi bi-envelope"></i> Contact</a>
+    </nav>
+
+    <div class="sidebar-social">
+      <a href="https://www.linkedin.com/in/rafiu-ali/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/Muhammad-Rafiu-Ali?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="mailto:rafiuali2002@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    </div>
+  </aside>
+
+  <nav class="navbar navbar-dark mobile-nav">
+    <div class="container">
+      <a class="navbar-brand brand mb-0" href="#home"><span class="brand-mark">MRA</span> RafiuAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Portfolio Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="nav flex-column">
+        <a class="nav-link text-white" href="#home" data-bs-dismiss="offcanvas">Home</a>
+        <a class="nav-link text-white" href="#about" data-bs-dismiss="offcanvas">About</a>
+        <a class="nav-link text-white" href="#skills" data-bs-dismiss="offcanvas">Skills</a>
+        <a class="nav-link text-white" href="#resume" data-bs-dismiss="offcanvas">Resume</a>
+        <a class="nav-link text-white" href="#projects" data-bs-dismiss="offcanvas">Projects</a>
+        <a class="nav-link text-white" href="#achievements" data-bs-dismiss="offcanvas">Achievements</a>
+        <a class="nav-link text-white" href="#certifications" data-bs-dismiss="offcanvas">Certifications</a>
+        <a class="nav-link text-white" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="main-wrap">
+    <section id="home" class="hero">
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <div class="eyebrow"><i class="bi bi-stars"></i> Building practical AI solutions</div>
+            <h1>Muhammad <span>Rafiu Ali</span></h1>
+            <div class="typed-line">I am an <span id="typed-text">AI & Data Science Developer</span><span class="cursor">|</span></div>
+            <p class="hero-copy">
+              I develop intelligent applications using Python, machine learning, deep learning, computer vision, NLP, and data analytics. I also teach Computer Science and help students connect theory with practical implementation.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#projects" class="btn btn-accent"><i class="bi bi-grid me-2"></i>View Projects</a>
+              <a href="cv/Rafiu Ali cv SMIU.pdf" class="btn btn-outline-light-custom" download><i class="bi bi-download me-2"></i>Download CV</a>
+            </div>
+            <div class="d-flex gap-2 mt-4">
+              <a class="social-circle" href="https://www.linkedin.com/in/rafiu-ali/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a class="social-circle" href="https://github.com/Muhammad-Rafiu-Ali?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a class="social-circle" href="mailto:rafiuali2002@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="avatar-shell">
+              <div class="avatar-placeholder">
+                <img src="Rafiu Passport photo.png"
+                     alt="Muhammad Rafiu Ali"
+                     class="profile-photo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="kicker">About Me</span>
+          <h2>AI development, data, and education</h2>
+          <p>I combine technical development with teaching experience to build understandable and useful technology solutions.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="profile-card">
+              <img src="Rafiu Passport photo.png" class="profile-photo" alt="Muhammad Rafiu Ali">
+              <h3>Muhammad Rafiu Ali</h3>
+              <p style="color:#85f0d7;font-weight:800;">AI & Data Science Developer</p>
+              <div class="contact-row"><i class="bi bi-envelope"></i><a href="mailto:rafiuali2002@gmail.com">rafiuali2002@gmail.com</a></div>
+              <div class="contact-row"><i class="bi bi-telephone"></i><a href="tel:+923072767020">+92 307 2767020</a></div>
+              <div class="contact-row"><i class="bi bi-geo-alt"></i><span>Karachi, Pakistan</span></div>
+              <div class="contact-row"><i class="bi bi-linkedin"></i><a href="https://www.linkedin.com/in/rafiu-ali/" target="_blank" rel="noopener">linkedin.com/in/rafiu-ali</a></div>
+              <div class="contact-row"><i class="bi bi-github"></i><a href="https://github.com/Muhammad-Rafiu-Ali?tab=repositories" target="_blank" rel="noopener">Muhammad-Rafiu-Ali</a></div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="content-card about-panel h-100">
+              <p class="lead-copy">
+                I am an Information Technology graduate, AI and Data Science developer, and Computer Science educator with practical experience in Python, machine learning, data analysis, computer vision, networking, and intelligent application development.
+              </p>
+              <p>
+                My work focuses on solving real-world problems through accessible AI systems. I have developed projects in resume analysis, business intelligence, and plant disease detection. Alongside development, I conduct laboratory sessions and guide undergraduate students through programming, practical experiments, and system-level projects.
+              </p>
+
+              <div class="mt-4">
+                <span class="info-chip"><i class="bi bi-mortarboard"></i> BS Information Technology</span>
+                <span class="info-chip"><i class="bi bi-geo-alt"></i> Karachi, Pakistan</span>
+                <span class="info-chip"><i class="bi bi-code-slash"></i> Python Developer</span>
+                <span class="info-chip"><i class="bi bi-cpu"></i> AI & ML</span>
+                <span class="info-chip"><i class="bi bi-person-video3"></i> Computer Science Educator</span>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="cv/Rafiu Ali cv SMIU.pdf" class="btn btn-accent" download><i class="bi bi-download me-2"></i>Download Resume</a>
+                <a href="#contact" class="btn btn-outline-dark rounded-3 px-3"><i class="bi bi-chat-dots me-2"></i>Contact Me</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+          <div class="col-sm-6 col-xl-3"><div class="stat-card"><div class="stat-value">20+</div><div class="stat-label">AI & Software Projects</div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="stat-card"><div class="stat-value">25+</div><div class="stat-label">Certifications & Achievements</div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="stat-card"><div class="stat-value">10+</div><div class="stat-label">Technical Skills & Tools</div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="stat-card"><div class="stat-value">2+</div><div class="stat-label">Teaching & Technical Experience</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span class="kicker">Technical Skills</span>
+          <h2>Tools and technologies</h2>
+          <p>Core capabilities used across AI applications, data projects, educational work, and web-based prototypes.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="content-card skills-group">
+              <h3><i class="bi bi-cpu me-2" style="color:#14816a;"></i>Artificial Intelligence & Data Science</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Machine Learning</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Deep Learning</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Computer Vision</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Natural Language Processing</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Data Analysis</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Data Visualization</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>CNN Models</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>AI Applications</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="content-card skills-group">
+              <h3><i class="bi bi-code-slash me-2" style="color:#14816a;"></i>Programming, Libraries & Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Python</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>SQL</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>C / C++</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>HTML / CSS</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Pandas</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>NumPy</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Scikit-learn</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Streamlit</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Bootstrap</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>GitHub</span>
+                <span class="skill-tag"><i class="bi bi-check2-circle"></i>Computer Networking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="kicker">Resume</span>
+          <h2>Education and professional experience</h2>
+          <p>A concise overview of my academic background, teaching work, laboratory instruction, and technology exposure.</p>
+        </div>
+
+        <div class="resume-layout">
+          <div class="content-card resume-card">
+            <h3 class="mb-4"><i class="bi bi-mortarboard me-2" style="color:#14816a;"></i>Education</h3>
+            <div class="timeline-item">
+              <div class="timeline-meta">2020 - 2024</div>
+              <h4>BS Information Technology</h4>
+              <div class="timeline-company">University of Sufism and Modern Science, Bhitshah</div>
+              <p class="mb-0">CGPA: 3.42</p>
+            </div>
+
+            <h3 class="mt-5 mb-4"><i class="bi bi-translate me-2" style="color:#14816a;"></i>Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">English - Communication</span>
+              <span class="skill-tag">Urdu - Fluent</span>
+              <span class="skill-tag">Sindhi - Native</span>
+            </div>
+
+            <h3 class="mt-5 mb-3"><i class="bi bi-bullseye me-2" style="color:#14816a;"></i>Professional Interests</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Artificial Intelligence</span>
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Computer Vision</span>
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">Intelligent Systems</span>
+              <span class="skill-tag">Data Analytics</span>
+            </div>
+          </div>
+
+          <div class="content-card resume-card">
+            <h3 class="mb-4"><i class="bi bi-briefcase me-2" style="color:#14816a;"></i>Professional Experience</h3>
+
+            <div class="timeline-item">
+              <div class="timeline-meta">September 2025 - Present</div>
+              <h4>Lab Instructor</h4>
+              <div class="timeline-company">SMI University, Karachi</div>
+              <ul>
+                <li>Conduct undergraduate IT and Computer Science practical laboratory sessions.</li>
+                <li>Guide students in coding tasks, experiments, assignments, and system-level projects.</li>
+                <li>Prepare and maintain lab manuals, worksheets, and practical activities.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-meta">September 2024 - May 2025</div>
+              <h4>Computer Science Teacher</h4>
+              <div class="timeline-company">The Educators Hala Campus</div>
+              <ul>
+                <li>Taught Computer Science topics from foundational to advanced levels.</li>
+                <li>Designed lessons, assignments, practical tasks, and technical presentations.</li>
+                <li>Supported students' programming knowledge and communication skills.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-meta">July 2024 - August 2024</div>
+              <h4>Technology & Media Intern</h4>
+              <div class="timeline-company">ISPR Pakistan</div>
+              <ul>
+                <li>Explored technology, AI, cybersecurity, digital communication, and technical workflows.</li>
+                <li>Gained exposure to media management, public relations, and technology-supported operations.</li>
+                <li>Observed the use of surveillance, threat detection, and information systems in professional environments.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-soft">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>AI and data-driven applications designed to support decision-making, improve accessibility, and address practical problems.</p>
+        </div>
+        
+          <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image"><img src="images/resume-analyzer.png" alt="AI Resume and Job Match Analyzer"></div>
+              <div class="project-body">
+                <span class="project-badge">NLP & Career Technology</span>
+                <h3>AI Resume & Job Match Analyzer</h3>
+                <p>An AI-powered application that compares resumes with job descriptions and generates match scores, ATS feedback, missing keywords, improvement suggestions, and cover letters.</p>
+                <div class="tech-list"><span>Python</span><span>Streamlit</span><span>NLP</span><span>Machine Learning</span></div>
+                <a class="btn btn-outline-dark rounded-3 mb-3" 
+                href="https://github.com/Muhammad-Rafiu-Ali/AI-Resume-Job-Match-Analyzer" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-github me-2"></i>View on GitHub
+                </a>
+                <a class="btn btn-outline-dark rounded-3" 
+                href="https://www.linkedin.com/posts/rafiu-ali_artificialintelligence-machinelearning-nlp-ugcPost-7493192382679629824-Lza2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEO2c-wBiWextr8AEHfaKyElOfVRbj-DAVQ" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-linkedin me-2"></i>View Project Post
+                </a>      
+              </div>
+            </article>
+          </div>
+          
+          
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image"><img src="images/AI-Powered BIC.png" alt="AI Business Intelligence Copilot"></div>
+              <div class="project-body">
+                <span class="project-badge">Business Intelligence</span>
+                <h3>AI-Powered BI Copilot for SMEs</h3>
+                <p>An intelligent analytics solution that helps small and medium-sized businesses explore sales data, generate insights, identify patterns, and support data-driven decisions.</p>
+                <div class="tech-list"><span>Python</span><span>Data Analytics</span><span>Streamlit</span><span>Business Intelligence</span></div>
+                <a class="btn btn-outline-dark rounded-3 mb-3" 
+                href="https://github.com/Muhammad-Rafiu-Ali/AI-Powered-Business-Intelligence-Copilot-for-SMEs" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-github me-2"></i>View on GitHub
+                </a>
+                <a class="btn btn-outline-dark rounded-3" 
+                href="https://www.linkedin.com/posts/rafiu-ali_datascience-machinelearning-businessintelligence-ugcPost-7482378530102693888-xeN4/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEO2c-wBiWextr8AEHfaKyElOfVRbj-DAVQ" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-linkedin me-2"></i>View Project Post
+                </a>              
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image"><img src="images/banking.png" alt="AI Business Intelligence Copilot"></div>
+              <div class="project-body">
+                <span class="project-badge">Business Analyst</span>
+                <h3>Banking Risk Analytics</h3>
+                <p>Basic understanding of risk analytics in banking and financial services and how data can be used to minimize the risk of losing money while lending to customers.</p>
+                <div class="tech-list"><span>Python</span><span>Data Analytics</span><span>Streamlit</span><span>Business Intelligence</span></div>
+                <a class="btn btn-outline-dark rounded-3 mb-3" 
+                href="https://github.com/Muhammad-Rafiu-Ali/Banking_Risk_Analytics_Project" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-github me-2"></i>View on GitHub
+                </a>
+                <a class="btn btn-outline-dark rounded-3" 
+                href="https://www.linkedin.com/posts/rafiu-ali_datascience-powerbi-banking-ugcPost-7373369553105408000-1yjp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEO2c-wBiWextr8AEHfaKyElOfVRbj-DAVQ" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-linkedin me-2"></i>View Project Post
+                </a>              
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image"><img src="images/AI Assistant Chatbot.png" alt="AI Assistant Bot"></div>
+              <div class="project-body">
+                <span class="project-badge">AI Assistant Bot</span>
+                <h3>Your Smart AI Guide for Everything</h3>
+                <p>This is a powerful and user-friendly AI chatbot developed using Streamlit and Google's Gemini API.It is designed to assist with a wide range of multitasking. he bot interacts fluently in English, Urdu, Roman Urdu, and Roman Sindhi.</p>
+                <div class="tech-list"><span>Python</span><span>NLP</span><span>Streamlit</span><span>Google's Gemini API</span></div>
+                <a class="btn btn-outline-dark rounded-3 mb-3" 
+                href="https://github.com/Muhammad-Rafiu-Ali/AI-Powered-Business-Intelligence-Copilot-for-SMEs" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-github me-2"></i>View on GitHub
+                </a>
+                <a class="btn btn-outline-dark rounded-3" 
+                href="https://www.linkedin.com/posts/rafiu-ali_datascience-machinelearning-businessintelligence-ugcPost-7482378530102693888-xeN4/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEO2c-wBiWextr8AEHfaKyElOfVRbj-DAVQ" 
+                target="_blank" rel="noopener">
+                <i class="bi bi-linkedin me-2"></i>View Project Post
+                </a>              
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image"><img src="images/PD-PRP.png" alt="PD-RPP Plant Disease Detection System"></div>
+              <div class="project-body">
+                <span class="project-badge">Final Year Project</span>
+                <h3>PD-RPP: Plant Disease & Pesticide Recommendation</h3>
+                <p>An AI-driven framework that detects plant diseases from leaf images using a CNN and provides pesticide recommendations, precautions, multilingual support, voice commands, and chatbot assistance.</p>
+                <div class="tech-list"><span>CNN</span><span>Computer Vision</span><span>Chatbot</span><span>13,024 Images</span><span>~95% Accuracy</span></div>
+                <div class="d-flex flex-wrap gap-2">
+                  <a class="btn btn-outline-dark rounded-3" href="https://github.com/Muhammad-Rafiu-Ali?tab=repositories" target="_blank" rel="noopener"><i class="bi bi-github me-2"></i>View on GitHub</a>
+                  <button class="btn btn-light border rounded-3" type="button" disabled><i class="bi bi-play-circle me-2"></i>Video Coming Soon</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="services">
+      <div class="container">
+        <div class="section-title">
+          <span class="kicker">What I Do</span>
+          <h2>Focused technical capabilities</h2>
+          <p>Practical services and strengths aligned with my current academic, teaching, and project experience.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4"><div class="service-card-dark"><div class="icon-box"><i class="bi bi-cpu"></i></div><h3>AI & ML Prototyping</h3><p>Developing and testing practical machine learning and deep learning solutions for real-world problems.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="service-card-dark"><div class="icon-box"><i class="bi bi-eye"></i></div><h3>Computer Vision</h3><p>Image-based classification workflows, CNN models, preprocessing, evaluation, and prediction interfaces.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="service-card-dark"><div class="icon-box"><i class="bi bi-chat-square-text"></i></div><h3>NLP Applications</h3><p>Text analysis, matching, keyword extraction, chatbot features, and AI-assisted recommendation systems.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="service-card-dark"><div class="icon-box"><i class="bi bi-graph-up-arrow"></i></div><h3>Data Analytics</h3><p>Preparing, exploring, visualizing, and interpreting data to support decisions and communicate insights.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="service-card-dark"><div class="icon-box"><i class="bi bi-window"></i></div><h3>Streamlit Applications</h3><p>Building interactive Python web apps for AI demonstrations, dashboards, and analytical workflows.</p></div></div>
+          <div class="col-md-6 col-xl-4"><div class="service-card-dark"><div class="icon-box"><i class="bi bi-person-video3"></i></div><h3>Teaching & Mentoring</h3><p>Delivering practical Computer Science instruction and guiding students through coding and laboratory work.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="kicker">Recognition</span>
+          <h2>Achievements & awards</h2>
+          <p>Academic performance, innovation participation, scholarships, and extracurricular recognition.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl"><div class="achievement-card"><div class="icon-box"><i class="bi bi-laptop"></i></div><h4>Prime Minister Laptop Award</h4><p>Received a laptop under the Prime Minister's Youth Laptop Scheme.</p></div></div>
+          <div class="col-md-6 col-xl"><div class="achievement-card"><div class="icon-box"><i class="bi bi-trophy"></i></div><h4>3rd Position</h4><p>Secured third position in the Department of Information Technology.</p></div></div>
+          <div class="col-md-6 col-xl"><div class="achievement-card"><div class="icon-box"><i class="bi bi-lightbulb"></i></div><h4>Sindh Ignite</h4><p>Project shortlisted in the Sindh Ignite Innovation Program.</p></div></div>
+          <div class="col-md-6 col-xl"><div class="achievement-card"><div class="icon-box"><i class="bi bi-mortarboard"></i></div><h4>SEEF Scholarship</h4><p>Awarded the Sindh Educational Endowment Fund Scholarship.</p></div></div>
+          <div class="col-md-6 col-xl"><div class="achievement-card"><div class="icon-box"><i class="bi bi-award"></i></div><h4>Appreciation Letter</h4><p>Recognized by the Green Youth Movement for active participation.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+  <section id="certifications" class="section section-soft">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="kicker">Continuous Learning</span>
+      <h2>Certifications</h2>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Certificate 1 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Python for Data Science, AI & Development.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/Python for Data Science, AI & Development.png" alt="Python for Data Science Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Python for Data Science, AI & Development</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/FHNNMOQ1O0J4"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Certificate 2 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Machine Learning with Python.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/Machine Learning with Python.png" alt="Machine Learning with Python Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Machine Learning with Python</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/O99MCFFR2DHE"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Certificate 3 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Natural Language Processing with Classification and Vector Spaces.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/NLP.png" alt="NLP Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>NLP with Classification and Vector Spaces</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/TJ8YYG8OJH0N"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Certificate 4 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Google AI (Specialization).pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/Google AI .png" alt="Google AI Specialization Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Google AI (Specialization)</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/professional-cert/7IQY8C3L7ZC"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Certificate 5 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Clinical Data Models and Data Quality Assessments.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/clinick.png" alt="NLP Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Clinical Data Models and Data Quality Assessments</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/22LE2SLFCCDI"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 6 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/DATA ANALYTICS AND BUSINESS INTELLIGENCE.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/DATA ANALYTICS .png" alt="NLP Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Data Analytics And Business Intelligence</h4>
+            <p>DigiSkills Certificate</p>
+
+            <a class="certificate-link"
+               href="https://digiskills.pk/verify/"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Certificate 7 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Databases and SQL for Data Science with Python.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/database.png" alt="NLP Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Databases and SQL for Data Science with Python</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/75A3A5GW9GN4"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 8 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/Advanced Networking, Virtualization, and IT Security.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/network.png" alt="NLP Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>Advanced Networking, Virtualization, and IT Security</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://www.coursera.org/account/accomplishments/verify/Z3822FFB3E8J"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 9 -->
+      <div class="col-md-4">
+        <div class="certificate-image-card">
+          <a href="certificate/pdf/E-COMMERCE MANAGEMENT.pdf" target="_blank">
+            <div class="certificate-preview">
+              <img src="certificate/Images/E-commerce.png" alt="NLP Certificate">
+            </div>
+          </a>
+
+          <div class="certificate-info">
+            <h4>E-Commerce Management</h4>
+            <p>Coursera Certificate</p>
+
+            <a class="certificate-link"
+               href="https://digiskills.pk/verify/"
+               target="_blank">
+              <i class="bi bi-patch-check"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /.row -->
+
+  </div> <!-- /.container -->
+</section>
+<!--  
+<div class="alert alert-info border-0 rounded-4 mt-4 mb-0" role="alert">
+          <i class="bi bi-info-circle me-2"></i>
+          The Coursera <strong>My Learning</strong> page is private and cannot verify your certificates for public visitors. Use each certificate's public credential URL instead.
+        </div>
+      </div>
+    </section>
+-->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="kicker">Contact</span>
+          <h2>Let's connect</h2>
+          <p>For AI projects, data analysis, teaching, internships, collaboration, or professional opportunities, contact me through email, LinkedIn, or GitHub.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="contact-card">
+              <div class="contact-action">
+                <div class="icon-box"><i class="bi bi-envelope"></i></div>
+                <div><small>Email</small><a href="mailto:rafiuali2002@gmail.com">rafiuali2002@gmail.com</a></div>
+              </div>
+              <div class="contact-action">
+                <div class="icon-box"><i class="bi bi-telephone"></i></div>
+                <div><small>Phone</small><a href="tel:+923072767020">+92 307 2767020</a></div>
+              </div>
+              <div class="contact-action">
+                <div class="icon-box"><i class="bi bi-linkedin"></i></div>
+                <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/rafiu-ali/" target="_blank" rel="noopener">Muhammad Rafiu Ali</a></div>
+              </div>
+              <div class="contact-action">
+                <div class="icon-box"><i class="bi bi-github"></i></div>
+                <div><small>GitHub</small><a href="https://github.com/Muhammad-Rafiu-Ali?tab=repositories" target="_blank" rel="noopener">Muhammad-Rafiu-Ali</a></div>
+              </div>
+              <div class="contact-action">
+                <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+                <div><small>Location</small><strong>Karachi, Pakistan</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="contact-card">
+              <h3 class="mb-2">Send a message</h3>
+              <p class="text-secondary mb-4">Let's connect! Share your ideas, questions, or project details and I'll be happy to discuss them.</p>
+              <form id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label" for="name">Your Name</label><input class="form-control" id="name" name="name" type="text" required></div>
+                  <div class="col-md-6"><label class="form-label" for="email">Your Email</label><input class="form-control" id="email" name="email" type="email" required></div>
+                  <div class="col-12"><label class="form-label" for="subject">Subject</label><input class="form-control" id="subject" name="subject" type="text" required></div>
+                  <div class="col-12"><label class="form-label" for="message">Message</label><textarea class="form-control" id="message" name="message" rows="6" required></textarea></div>
+                  <div class="col-12"><button class="btn btn-accent" type="submit"><i class="bi bi-send me-2"></i>Send Email</button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-wrap">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 text-center text-md-start">
+      <div>© <span id="currentYear"></span> Muhammad Rafiu Ali. All rights reserved.</div>
+      <div>Designed & Developed by Rafiu Ali.</div>
+    </div>
+  </footer>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const roles = [
+      "AI & Data Science Developer",
+      "Machine Learning Enthusiast",
+      "Computer Science Educator",
+      "Python & Streamlit Developer"
+    ];
+
+    const typedText = document.getElementById("typed-text");
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeRole() {
+      const current = roles[roleIndex];
+      typedText.textContent = deleting
+        ? current.slice(0, charIndex--)
+        : current.slice(0, charIndex++);
+
+      let delay = deleting ? 42 : 78;
+
+      if (!deleting && charIndex > current.length) {
+        deleting = true;
+        delay = 1300;
+      } else if (deleting && charIndex < 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        charIndex = 0;
+        delay = 280;
+      }
+      setTimeout(typeRole, delay);
+    }
+
+    typeRole();
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const backToTop = document.getElementById("backToTop");
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navLinks = [...document.querySelectorAll("#desktopNav .nav-link")];
+
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("show", window.scrollY > 500);
+      const position = window.scrollY + 180;
+      let currentSection = "home";
+      sections.forEach(section => {
+        if (position >= section.offsetTop) currentSection = section.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${currentSection}`);
+      });
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const form = new FormData(this);
+      const subject = encodeURIComponent(form.get("subject"));
+      const body = encodeURIComponent(
+        `Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`
+      );
+      window.location.href = `mailto:rafiuali2002@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
